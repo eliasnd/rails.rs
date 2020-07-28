@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
 	skip_before_action :authorized, only: [:new, :create, :welcome]
 
 	def new
+		@failed = false
 	end
 
 	def create
@@ -12,7 +13,8 @@ class SessionsController < ApplicationController
 			session[:user_id] = @user.id
 			redirect_to '/welcome'
 		else
-			redirect_to '/login'
+			@failed = true
+			render 'new'
 		end
 	end
 

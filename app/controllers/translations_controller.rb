@@ -5,7 +5,8 @@ class TranslationsController < ApplicationController
 
 	def create
 		puts params[:text].inspect
-		@text = PigLatin.translate(params[:text])
+		@original = params[:text]
+		@translation = PigLatin.translate(params[:text])
 		puts @text
 		render "index"
 	end

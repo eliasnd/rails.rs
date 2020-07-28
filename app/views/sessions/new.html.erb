@@ -1,6 +1,12 @@
 <h1>Log In</h1>
 
-<%= form_with url: '/login' do |form| %>
+<%= form_with url: '/login', local: true do |form| %>
+
+	<% if @failed %>
+		<h2>Error: </h2>
+		<p> Incorrect username or password</p>
+	<% end %>
+
 	<p>
 		<%= form.label :username %><br>
 		<%= form.text_field :username %><br>

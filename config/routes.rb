@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-	resources :users, only: [:new, :create]
-	resources :translations, only: [:index, :create]
+	resources :users, only: [:new, :create] do
+		resources :translations
+	end
 
 	get 'login', to: 'sessions#new'
 	post 'login', to: 'sessions#create'

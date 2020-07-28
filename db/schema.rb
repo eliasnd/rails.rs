@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_27_161358) do
+ActiveRecord::Schema.define(version: 2020_07_28_175150) do
+
+  create_table "translations", force: :cascade do |t|
+    t.text "original"
+    t.text "translated"
+    t.integer "translator_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["translator_id"], name: "index_translations_on_translator_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
@@ -19,4 +28,5 @@ ActiveRecord::Schema.define(version: 2020_07_27_161358) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "translations", "translators"
 end
