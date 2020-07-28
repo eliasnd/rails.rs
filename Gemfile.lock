@@ -1,3 +1,9 @@
+PATH
+  remote: crates/pig_latin
+  specs:
+    pig_latin (1.0.0)
+      helix_runtime (~> 0.7.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -214,6 +220,7 @@ DEPENDENCIES
   helix-rails (~> 0.5.0)
   jbuilder (~> 2.7)
   listen (~> 3.2)
+  pig_latin!
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.2)
   sass-rails (>= 6)
