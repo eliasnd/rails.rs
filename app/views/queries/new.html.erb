@@ -1,0 +1,19 @@
+<h1>New Query</h1>
+
+<%= form_with model: @user_query, local: true, url: user_queries_path do |form| %>
+
+	<p>
+		<%= form.label :file %>
+		<%= form.file_field :file %>
+	</p>
+	
+	<p>
+		<%= form.label :sample_query_field %><br>
+		<%= form.text_field :sample_query_field %><br>
+	</p>
+
+	<p>
+		<%= form.submit 'Submit' %>
+	</p>
+
+<% end %>
