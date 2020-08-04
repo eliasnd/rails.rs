@@ -6,6 +6,6 @@ class User < ApplicationRecord
 	validates_uniqueness_of :username
 	validates :password, presence: true, length: { minimum: 8 }
 
-	has_many :translations
+	has_many :user_queries
 
 end

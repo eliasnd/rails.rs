@@ -5,9 +5,8 @@ class QueriesController < ApplicationController
 	end
 
 	def create
-		puts params.inspect
-		@user_query = Query.new(query_params)
-		redirect_to(@user_query)
+		puts query_params[:file].inspect
+		@user_query = Query.new
 	end
 
 	def show

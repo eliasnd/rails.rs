@@ -10,11 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_03_191958) do
+ActiveRecord::Schema.define(version: 2020_08_04_160044) do
 
   create_table "queries", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "output"
   end
 
   create_table "translations", force: :cascade do |t|
