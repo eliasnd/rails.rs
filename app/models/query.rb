@@ -1,4 +1,4 @@
 class Query < ApplicationRecord
-	validates :file, presence: true
+	has_one_attached :file
 	validates :sample_field, presence: true
 end

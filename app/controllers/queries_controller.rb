@@ -5,17 +5,15 @@ class QueriesController < ApplicationController
 	end
 
 	def create
-		params = query_params
+		puts params[:query][:file].inspect
+		puts Query.column_names
+		output = Lori.handleInput(params[:query][:file].read, params[:query][:sample_field])
 
-		@user_query = Query.new(Lori.handleInput(params[:file].read, params[:sample_query_field]))
+		@user_query = Query.new(params.require(:query).permit(:sample_field))
+		@user_query.file.attach(params[:query][:file])
 	end
 
 	def show
 	end
-
-	private
-		def query_params
-			params.require(:query).permit(:file, :sample_query_field)
-		end
 
 end
