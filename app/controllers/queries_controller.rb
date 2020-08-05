@@ -5,8 +5,9 @@ class QueriesController < ApplicationController
 	end
 
 	def create
-		puts query_params[:file].inspect
-		@user_query = Query.new
+		params = query_params
+
+		@user_query = Query.new(Lori.handleInput(params[:file].read, params[:sample_query_field]))
 	end
 
 	def show

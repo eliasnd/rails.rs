@@ -9,8 +9,8 @@ pub mod metrics;
 
 ruby! {
     class Lori {
-        def hello() {
-            println!("Hello from lori!");
+        def handleInput(file: String, input: String) -> String {
+            input
         }
     }
 }
