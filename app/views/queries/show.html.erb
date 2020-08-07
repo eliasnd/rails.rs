@@ -1,1 +1,7 @@
-<%= link_to 'Back', '/welcome' %>
+<%= @query %>
+
+<p>
+	Output: <%= @output %>
+</p>
+
+<%= button_to 'Back', '/welcome', method: :get %>
