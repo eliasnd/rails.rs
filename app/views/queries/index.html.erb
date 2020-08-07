@@ -1,0 +1,13 @@
+<h1>Query History</h1>
+
+<br>
+
+<% if current_user.queries.length == 0 %>
+	No queries to show.
+<% else %>
+	<%= render current_user.queries %>
+<% end %>
+
+<br>
+
+<%= button_to 'Back', '/welcome', method: :get %>

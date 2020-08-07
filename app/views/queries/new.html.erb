@@ -1,6 +1,19 @@
 <h1>New Query</h1>
 
-<%= form_with model: @user_query, local: true, url: user_queries_path do |form| %>
+<%= form_with model: [current_user, current_user.queries.build], local: true do |form| %>
+
+	<% if @query.errors.any? %>
+		<div id="error_explanation">
+			<h2>
+				<%= pluralize(@query.errors.count, "error") %> prohibited this query from being processed:
+			</h2>
+			<ul>
+				<% @query.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
 
 	<p>
 		<%= form.label :file %>
@@ -17,3 +30,5 @@
 	</p>
 
 <% end %>
+
+<%= link_to 'Back', '/welcome' %>
