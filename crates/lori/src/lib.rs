@@ -10,7 +10,7 @@ pub mod metrics;
 ruby! {
     class Lori {
         def handleInput(file: String, input: String) -> String {
-            input
+            file
         }
     }
 }

@@ -1,7 +1,7 @@
-<%= @query %>
+<%= render @query %>
 
-<p>
-	Output: <%= @output %>
-</p>
+<strong>Output: </strong> <%= @output %>
+
+<br>
 
 <%= button_to 'Back', '/welcome', method: :get %>
