@@ -1,24 +1,29 @@
-<h1>Log In</h1>
+<%= render 'navbar' %>
 
-<%= form_with url: '/login', local: true do |form| %>
+<div id="login-container">
+	<h1>Log In</h1>
 
-	<% if @failed %>
-		<h2>Error: </h2>
-		<p> Incorrect username or password</p>
+	<%= form_with url: '/login', local: true do |form| %>
+
+		<% if @failed %>
+			<h2>Error: </h2>
+			<p> Incorrect username or password</p>
+		<% end %>
+
+		<p>
+			<%= form.label :username %>
+			<%= form.text_field :username %><br>
+		</p>
+
+		<p>
+			<%= form.label :password %>
+			<%= form.password_field :password %><br>
+		</p>
+
+		<%= form.submit "Log In", class: 'form-submit'%>
+
 	<% end %>
 
-	<p>
-		<%= form.label :username %><br>
-		<%= form.text_field :username %><br>
-	</p>
-
-	<p>
-		<%= form.label :password %><br>
-		<%= form.password_field :password %><br>
-	</p>
-
-	<%= form.submit "Log In" %>
-
-<% end %>
-
-<%= link_to 'Back', '/welcome' %>
+	<br>
+	<%= link_to 'Back', '/welcome', class: 'back-btn'%>
+</div>

@@ -1,3 +1,93 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+body {
+	font-family: 'Montserrat';
+	background-color: #0D1821;
+	color: #B4CDED;
+	text-align: center;
+}
+
+h1 {
+	font-size: 48px;
+}
+
+#navbar {
+	position: relative;
+}
+
+#navbar-buttons {
+	display: flex;
+	flex-direction: row-reverse;
+	background-color: #344966;
+	width: 100%;
+	right: 0;
+	height: 75px;
+	vertical-align: middle;
+	min-width: 0;
+}
+
+.navbar-btn-container {
+	margin: 12.5px;
+}
+
+.navbar-btn {
+	background-color: #344966;
+	color: white;
+	width: 100%;
+	height: 50px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: #344966;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+.navbar-btn:hover {
+	border-color: #F0F4EF;
+}
+
+#welcome-user {
+	position: absolute;
+	color: white;
+	left: 2.5%;
+	font-size: 28px;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+  	transform: translateY(-50%);
+}
+
+#welcome {
+	text-align: center;
+	padding: 20px 0;
+	color: #B4CDED;
+}
+
+#login-container {
+	margin-top: 100px;
+	text-align: center;
+}
+
+#signup-container {
+	margin-top: 100px;
+	text-align: center;
+}
+
+.form-submit {
+	color: #B4CDED;
+	background: none;
+	border-style: solid;
+	border-width: 2px;
+	border-color: white;
+	font-size: 16px;
+}
+
+.form-submit:hover {
+	background: solid;
+}
+
+.back-btn {
+	color: #B4CDED;
+}
+

@@ -1,3 +1,5 @@
+<%= render '/sessions/navbar' %>
+
 <h1>New Query</h1>
 
 <%= form_with model: [current_user, current_user.queries.build], local: true do |form| %>
@@ -15,20 +17,24 @@
 		</div>
 	<% end %>
 
-	<p>
-		<%= form.label :file %>
+	<p class="query-form-file">
+		<%= form.label :file %>: 
 		<%= form.file_field :file %>
 	</p>
 	
-	<p>
-		<%= form.label :sample_field %><br>
+	<%# Sample field below. Copy the next block to add any additional fields %>
+
+	<p class="query-form-field">
+		<%= form.label :sample_field %>: 
 		<%= form.text_field :sample_field %><br>
 	</p>
 
-	<p>
-		<%= form.submit 'Submit' %>
+	<%# End sample field %>
+
+	<p class="query-form-submit">
+		<%= form.submit 'Submit', class: 'form-submit'%>
 	</p>
 
 <% end %>
 
-<%= link_to 'Back', '/welcome' %>
+<%= link_to 'Back', '/welcome', class: 'back-btn' %>

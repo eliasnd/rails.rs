@@ -9,9 +9,10 @@ class QueriesController < ApplicationController
 	end
 
 	def create
-		# @query = Query.new
-		# @query.sample_field = params[:query][:sample_field]
-		# @query.file.attach(params[:query][:file])
+
+		# Edit the next line to add more fields to the form
+		# Example: @query = current_user.queries.create(params.require(:query).permit(:file, :sample_field, :sample_field_2, :sample_field_3))
+
 		@query = current_user.queries.create(params.require(:query).permit(:file, :sample_field))
 
 		if @query.save 
@@ -26,6 +27,9 @@ class QueriesController < ApplicationController
 		file_text = @query.file.open do |file| 
 			next file.read
 		end
+
+		# Edit the next line to send more fields to the rust backend
+		# Example: @output = Lori.handleInput(file_text, @query.sample_field, @query.sample_field_2, @query.sample_field_3)
 
 		@output = Lori.handleInput(file_text, @query.sample_field)
 	end

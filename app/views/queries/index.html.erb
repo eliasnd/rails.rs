@@ -1,17 +1,24 @@
+<%= render '/sessions/navbar' %>
+
 <h1>Query History</h1>
 
 <br>
 
 <% if current_user.queries.length == 0 %>
-	No queries to show.
+	No queries to show.<br>
 <% else %>
 	<% current_user.queries.each do |query| %>
-		<%= render query %>
-		<%= button_to 'Process Again', user_query_path(current_user, query), method: :get %>
-		<%= button_to 'Delete Query', [query.user, query], method: :delete, data: { confirm: 'Are you sure?' } %>
+		<div class="query-container">
+			<%= render query %>
+			<br>
+			<div class="option-container">
+				<%= button_to 'Process Again', user_query_path(current_user, query), method: :get, class: 'button', form_class: 'button-form' %>
+				<%= button_to 'Delete Query', [query.user, query], method: :delete, data: { confirm: 'Are you sure?' }, class: 'button', form_class: 'button-form' %>
+			</div>
+		</div>
 	<% end %>
 <% end %>
 
 <br>
 
-<%= button_to 'Back', '/welcome', method: :get %>
+<%= link_to 'Back', '/welcome', class: 'back-btn' %>

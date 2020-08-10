@@ -1,0 +1,19 @@
+<div id="navbar">
+	<% if logged_in? %>
+
+		<span id="welcome-user">Hello, <%= current_user.username %></span>
+		<div id="navbar-buttons">
+			<%= button_to 'Sign Out', '/logout', method: :get, class: "navbar-btn", form_class: "navbar-btn-container"%>
+			<%= button_to 'History', user_queries_path(current_user), method: :get, class: "navbar-btn", form_class: "navbar-btn-container" %>
+			<%= button_to 'Rust Backend', new_user_query_path(current_user), method: :get, class: "navbar-btn", form_class: "navbar-btn-container" %>
+		</div>
+
+	<% else %>
+
+		<div id="navbar-buttons">
+			<%= button_to 'Sign Up', '/users/new', method: :get, class: "navbar-btn", form_class: "navbar-btn-container"  %>
+			<%= button_to 'Log In', '/login', method: :get, class: "navbar-btn", form_class: "navbar-btn-container"  %>
+		</div>
+
+	<% end %>
+</div>

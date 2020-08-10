@@ -1,7 +1,12 @@
+<%= render '/sessions/navbar' %>
+
+<div style="height: 150px; background: none"></div>
+
 <%= render @query %>
 
-<strong>Output: </strong> <%= @output %>
+<br>
+<div class="query-output"><strong>Output: </strong> <%= @output %></div>
 
 <br>
 
-<%= button_to 'Back', '/welcome', method: :get %>
+<%= link_to 'Back', '/welcome', class: 'back-btn' %>
